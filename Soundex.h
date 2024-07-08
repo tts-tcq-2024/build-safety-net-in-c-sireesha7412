@@ -8,10 +8,7 @@
 
 char getSoundexCode(char c) {
     static const char* soundexTable = "01230120022455012623010202";
-    if (isalpha(c)) {
-        return soundexTable[toupper(c) - 'A'];
-    }
-    return '0';
+    return isalpha(c) ? soundexTable[toupper(c) - 'A'] : '0';
 }
 
 void appendCode(char* soundex, char code, int* sIndex) {
@@ -34,14 +31,21 @@ void processName(const char* name, char* soundex, int* sIndex) {
     }
 }
 
+int isValidName(const char* name) {
+    return name != NULL && name[0] != '\0';
+}
+
+void initializeSoundex(char* soundex, char firstChar) {
+    soundex[0] = toupper(firstChar);
+}
+
 void generateSoundex(const char* name, char* soundex) {
-    if (name == NULL || soundex == NULL || name[0] == '\0') {
+    if (!isValidName(name)) {
         return;
     }
 
-    soundex[0] = toupper(name[0]);
     int sIndex = 1;
-
+    initializeSoundex(soundex, name[0]);
     processName(name, soundex, &sIndex);
     padWithZeros(soundex, sIndex);
 }
