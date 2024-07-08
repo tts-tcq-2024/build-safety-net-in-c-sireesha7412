@@ -28,5 +28,5 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
  //AAA
   char soundex[5];
   generateSoundex("123456", soundex);
-  ASSERT_STREQ(soundex,"0000");
+  ASSERT_STREQ(soundex,"1000");
 }
