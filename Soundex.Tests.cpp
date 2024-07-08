@@ -11,5 +11,5 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_1) {
  //AAA
   char soundex[5];
   generateSoundex("Srtvfr", soundex);
-  ASSERT_STREQ(soundex,"S6316");
+  ASSERT_STREQ(soundex,"S631");
 }
