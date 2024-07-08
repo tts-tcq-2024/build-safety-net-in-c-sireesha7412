@@ -13,3 +13,15 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_1) {
   generateSoundex("Srtvfr", soundex);
   ASSERT_STREQ(soundex,"S631");
 }
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_2) {
+ //AAA
+  char soundex[5];
+  generateSoundex("A12[45", soundex);
+  ASSERT_STREQ(soundex,"A000");
+}
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
+ //AAA
+  char soundex[5];
+  generateSoundex("", soundex);
+  ASSERT_STREQ(soundex,"0000");
+}
