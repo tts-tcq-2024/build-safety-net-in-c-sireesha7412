@@ -7,3 +7,9 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
   generateSoundex("AX", soundex);
  // ASSERT_EQ(soundex,"A200");
 }
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits) {
+ //AAA
+  char soundex[5];
+  generateSoundex("srtvfr", soundex);
+ // ASSERT_EQ(soundex,"263");
+}
