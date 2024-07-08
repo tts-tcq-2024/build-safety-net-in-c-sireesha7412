@@ -24,4 +24,9 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_3) {
   char soundex[5];
   generateSoundex("", soundex);
   //ASSERT_STREQ(soundex,"");
+}TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_4) {
+ //AAA
+  char soundex[5];
+  generateSoundex("123456", soundex);
+  ASSERT_STREQ(soundex,"0000");
 }
